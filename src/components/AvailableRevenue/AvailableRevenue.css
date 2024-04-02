@@ -1,0 +1,71 @@
+.available-revenue {
+    background-color: #FCF3F3;
+    grid-column: 4 / 6;
+    border-radius: 25px;
+}
+
+.available-revenue__header__icon {
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.available-revenue__header__icon:hover {
+    background-color: #f1e0e0;
+    box-shadow: 0px 0px 4px #cec1c1;
+    border-radius: 100%;
+}
+
+.available-revenue__chart {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.available-revenue__chart__short-info {
+    position: absolute;
+    text-align: center;
+    top: 45px;
+    left: 33px;
+}
+
+.available-revenue__chart__short-info__value {
+    font-size: 22px;
+    color: #DF1B00;
+}
+
+.available-revenue__chart-info {
+    width: 85%;
+    margin: 2% auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.available-revenue__chart-info__value {
+    font-size: 24px;
+}
+
+.available-revenue__chart-info__name {
+    font-size: 14px;
+}
+
+.available-revenue__chart-info > div > div {
+    width: 100px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.available-revenue__chart-info__bar-inner1 {
+    background-color: #DF1B00;
+    width: 25px;
+    height: 5px;
+    border-radius: 15px;
+}
+
+.available-revenue__chart-info__bar-inner2 {
+    background-color: #F8C3BF;
+    width: 75px;
+    height: 5px;
+    border-radius: 15px;
+}

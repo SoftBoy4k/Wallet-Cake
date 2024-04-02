@@ -1,0 +1,24 @@
+.short-card {
+    width: 47%;
+    height: 80px;
+    background: url('../../../assets/backgroundCard.png') no-repeat center;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.short-card__balance {
+    font-size: 18px;
+    margin: 7% 0 0 7%;
+}
+
+.short-card__info {
+    width: 85%;
+    margin: 2% auto;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    padding: 0 2px 5px 0;
+}

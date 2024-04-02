@@ -1,0 +1,76 @@
+.accounts {
+    background-color: #F3F4FC;
+    grid-column: 6 / 8;
+    border-radius: 25px;
+    position: relative;
+}
+
+.accounts__icons {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accounts__icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all ease 0.2s;
+}
+
+.accounts__icon > img {
+    width: 30px;
+
+}
+
+.accounts__icon:hover {
+    background-color: #dcdeef;
+}
+
+.accounts__arrow-next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    right: 5px;
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+}
+
+.accounts__arrow-next > img {
+    width: 32px;
+}
+
+.accounts__arrow-next:hover {
+    background-color: #F3F4FC;
+    box-shadow: 2px 2px 4px rgb(73, 73, 73);
+}
+
+.accounts__pages {
+    width: 50px;
+    height: 20px;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accounts__page {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #CED2F3;
+}
+
+.accounts__page-active {
+    background-color: #2C55D4;
+}

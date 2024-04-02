@@ -1,0 +1,35 @@
+.card {
+    width: 85%;
+    height: 160px;
+    margin: 10px auto;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    background: url('../../../assets/bgc8.png') no-repeat center;
+    margin-bottom: 0;
+}
+
+.card__name-attribute {
+    color: #ffffff8e;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.card__header__balance {
+    font-size: 24px;
+}
+
+.card__info {
+    display: flex;
+    align-self: end;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 5% auto;
+    justify-content: end;
+}

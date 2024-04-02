@@ -1,0 +1,164 @@
+.transfer {
+    background-color: #F3F4FC;
+    grid-column: 6 / 8;
+    border-radius: 25px;
+    transition: all ease 0.5s;
+    position: relative;
+}
+
+.transfer__arrow-next {
+    cursor: pointer;
+    position: absolute;
+    top: 19%;
+    right: 5px;
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+}
+
+.transfer__arrow-next > img {
+    width: 32px;
+}
+
+.transfer__arrow-next:hover {
+    background-color: #F3F4FC;
+    box-shadow: 2px 2px 4px rgb(73, 73, 73);
+}
+
+.transfer__icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.transfer__cards {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 1% auto;
+    margin-bottom: 0;
+}
+
+.transfer__pages {
+    width: 50px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transfer__page {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #CED2F3;
+}
+
+.transfer__page-active {
+    background-color: #2C55D4;
+}
+
+.transfer__form {
+    margin: 0 auto 3% auto;
+    width: 85%;
+}
+
+.transfer__div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.transfer__text {
+    color: rgba(0, 0, 0, 0.7);
+    margin: 3% 0 2% 0;
+}
+
+.transfer__input {
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 300;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+.transfer__div-comment {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.transfer__div-comment > input {
+    width: 100%;
+}
+
+.transfer__div-data-categories {
+    justify-content: space-between;
+}
+
+.transfer__div-data {
+    width: 63%;
+}
+
+.transfer__div-data > div {
+    display: flex;
+}
+
+.transfer__div-data > div > img {
+    cursor: pointer;
+    width: 40px;
+    opacity: 0.6;
+}
+
+.transfer__div-categories {
+    width: 33%;
+}
+
+.transfer__div-categories > div {
+    cursor: pointer;
+    display: flex;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3px;
+    height: 40px;
+}
+
+.transfer__div-categories > div > p {
+    font-size: 14px;
+}
+
+.transfer__div-categories > div > img {
+    width: 40px;
+}
+
+.transfer__div-amount {
+    justify-content: space-between;
+    align-items: end;
+}
+
+.transfer__div-amount > div {
+    width: 62%;
+}
+
+.transfer__div-amount > button {
+    cursor: pointer;
+    width: 33%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #2C55D4;
+    color: #fff;
+}
