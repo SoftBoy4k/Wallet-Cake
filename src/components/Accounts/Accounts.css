@@ -30,11 +30,10 @@
     background-color: #dcdeef;
 }
 
-.accounts__arrow-next {
+.accounts__arrow {
     cursor: pointer;
     position: absolute;
     top: 45%;
-    right: 5px;
     width: 46px;
     height: 46px;
     background-color: #fff;
@@ -45,13 +44,27 @@
     transition: all ease 0.5s;
 }
 
-.accounts__arrow-next > img {
+.accounts__arrow-next {
+    right: 5px;
+}
+
+.accounts__arrow-prev {
+    left: 5px;
+    rotate: 180deg;
+}
+
+.accounts__arrow > img {
     width: 32px;
 }
 
 .accounts__arrow-next:hover {
     background-color: #F3F4FC;
     box-shadow: 2px 2px 4px rgb(73, 73, 73);
+}
+
+.accounts__arrow-prev:hover {
+    background-color: #F3F4FC;
+    box-shadow: -2px -2px 4px rgb(73, 73, 73);
 }
 
 .accounts__pages {

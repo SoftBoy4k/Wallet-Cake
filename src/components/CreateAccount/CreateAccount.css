@@ -1,0 +1,42 @@
+.create-account__wrapper {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.create-account {
+    margin: 10% auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 5% 3%;
+    background-color: #F3F4FC;
+}
+
+.create-account__money {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.create-account__money > input {
+    width: 30%;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.create-account__money > p {
+    font-size: 22px;
+}
+
+.create-account__name {
+    width: 40%;
+    height: 30px;
+    margin: 5% auto;
+}
