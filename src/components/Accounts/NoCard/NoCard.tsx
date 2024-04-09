@@ -1,14 +1,20 @@
 import './NoCard.css'
 import plusIcon from '../../../icons/plus.png'
+import { useDispatch } from 'react-redux'
+import { openPopup } from '../../../redux/Slices/popupSlice';
 
-interface Props {
-    setIsCreateAccount: (flag: boolean) => void,
-}
 
-export const NoCard = ({setIsCreateAccount}: Props) => {
+export const NoCard = () => {
+
+  const dispatch = useDispatch();
+
+  const clickHandler = ():void => {
+    dispatch(openPopup(null));
+  }
+
   return (
     <div className='nocard'>
-        <img src={plusIcon} alt="plus" onClick={() => setIsCreateAccount(true)}/>
+        <img src={plusIcon} alt="plus" onClick={() => clickHandler()}/>
     </div>
   )
 }

@@ -3,20 +3,26 @@ import trashIcon from '../../icons/trash.png'
 import arrowIcon from '../../icons/arrow.png'
 import editIcon from '../../icons/edit.png'
 import { Card } from './Card/Card'
-import { IAccount } from '../../App'
 import { NoCard } from './NoCard/NoCard'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { openPopup } from '../../redux/Slices/popupSlice'
+import { RootState } from '../../redux/store'
+import { removeAccounts } from '../../redux/Slices/accountsSlice'
 
-interface Props {
-  accounts: IAccount[],
-  setAccounts: (accounts: IAccount[]) => void,
-  setIsCreateAccount: (flag: boolean) => void,
+
+export interface IAccount {
+  name: string,
+  amount: number
 }
 
 
-export const Accounts = ({accounts, setAccounts, setIsCreateAccount}: Props) => {
+export const Accounts = () => {
 
   const [accountPageNumber, setAccountPageNumber] = useState<number>(1);
+  const cards = useSelector((state: RootState) => state.accounts.accounts);
+  const dispatch = useDispatch();
+  const accounts = useSelector((state: RootState) => state.accounts.accounts);
 
 
   const accountPageHandler = (num: number): void => {
@@ -33,8 +39,14 @@ export const Accounts = ({accounts, setAccounts, setIsCreateAccount}: Props) => 
   }
 
   const removeAccount = (): void => {
-    setAccounts((prev: IAccount[]): IAccount[] => prev.filter((_, i) => i !== accountPageNumber - 1))
+    dispatch(removeAccounts(accountPageNumber-1))
   }
+
+  const handleEditClick = (id: number) => {
+    dispatch(openPopup(id));
+  };
+
+  console.log(cards);
 
   return (
     <div className="accounts">
@@ -42,14 +54,14 @@ export const Accounts = ({accounts, setAccounts, setIsCreateAccount}: Props) => 
           <h4>Accounts</h4>
           {accounts[accountPageNumber-1] ? <div className='accounts__icons'>
             <div className='accounts__icon'> 
-              <img  src={editIcon} alt="edit" />
+              <img  src={editIcon} alt="edit" onClick={() => handleEditClick(accountPageNumber - 1)}/>
             </div>
             <div className='accounts__icon' onClick={() => removeAccount()}>
               <img src={trashIcon} alt="remove card"/>
             </div>
           </div> : undefined}
         </div>
-        {accounts[accountPageNumber-1] ? <Card accountData={accounts[accountPageNumber - 1]}/> : <NoCard setIsCreateAccount={setIsCreateAccount}/>}
+        {accounts[accountPageNumber-1] ? <Card accountData={accounts[accountPageNumber - 1]}/> : <NoCard/>}
         {
           accountPageNumber > 1  ? 
           <div className='accounts__arrow accounts__arrow-prev' onClick={prevHandler}>

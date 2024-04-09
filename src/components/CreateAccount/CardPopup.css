@@ -1,0 +1,17 @@
+.card-popup__wrapper {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.card-popup {
+    margin: 10% auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 5% 3%;
+    background-color: #F3F4FC;
+}
