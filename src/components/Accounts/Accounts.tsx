@@ -46,8 +46,6 @@ export const Accounts = () => {
     dispatch(openPopup(id));
   };
 
-  console.log(cards);
-
   return (
     <div className="accounts">
         <div className='block__header'>

@@ -4,6 +4,7 @@ import { RootState } from '../../redux/store';
 import { addAccounts, editAccounts } from '../../redux/Slices/accountsSlice';
 import { closePopup } from '../../redux/Slices/popupSlice';
 import './CardPopup.css'
+import background_1 from '../../assets/bgc8.png'
 
 export const CardPopup: React.FC = () => {
     const isOpen = useSelector((state: RootState) => state.popup.isOpen);
@@ -45,21 +46,38 @@ export const CardPopup: React.FC = () => {
     return (
         <div className="card-popup__wrapper" onClick={(e) => clickHandler(e)}>
             <div className='card-popup'>
-                <h2>{editingCardId !== null ? 'Edit Card' : 'Add Card'}</h2>
-                <form onSubmit={handleSubmit}>
-                    <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    />
-                    <input
-                    type="number"
-                    placeholder="Amount"
-                    value={amount}
-                    onChange={e => setAmount(Number(e.target.value))}
-                    />
-                    <button type="submit">{editingCardId !== null ? 'Edit Card' : 'Add Card'}</button>
+                <h2 className='card-popup__header'>{editingCardId !== null ? 'Edit Card' : 'Add Card'}</h2>
+                <form className='card-popup__form' onSubmit={handleSubmit}>
+                    <div className='card-popup__form__amount'>
+                        <p className='card-popup__input__title'>Amount</p>
+                        <input
+                        className='card-popup__input'
+                        type="number"
+                        placeholder="Amount"
+                        value={amount}
+                        onChange={e => setAmount(Number(e.target.value))}
+                        />
+                        <p className='card-popup__form__amount__currency'>USD</p>
+                    </div>
+                    <div className='card-popup__form__name'>
+                        <p className='card-popup__input__title'>Name</p>
+                        <input
+                        className='card-popup__input'
+                        type="text"
+                        placeholder="Name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        />
+                    </div>
+                    <div className='card-popup__background__wrapper'>
+                        <p className='card-popup__input__title'>Background</p>
+                        <div className='card-popup__background'>
+                            <img src={background_1} alt="background 1" />
+                            <img src={background_1} alt="background 2" />
+                            <img src={background_1} alt="background 3" />
+                        </div>
+                    </div>
+                    <button className='card-popup__btn' type="submit">{editingCardId !== null ? 'Edit Card' : 'Add Card'}</button>
                 </form>
             </div>
         </div>
