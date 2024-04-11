@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
+export interface IAccount {
+    id: number,
+    name: string, 
+    amount: number, 
+    background: string
+}
 
 export interface AccountsState {
-    accounts: {name: string, amount: number, id: number}[]
+    accounts: IAccount[]
 }
 
 const initialState: AccountsState = {
@@ -14,11 +20,12 @@ export const accountsSlice = createSlice({
     name: 'accounts',
     initialState,
     reducers: {
-        addAccounts: (state, action: PayloadAction<{ name: string, amount: number}>) => {
+        addAccounts: (state, action: PayloadAction<{ name: string, amount: number, background: string}>) => {
             const currentAccounts = {
                 name: action.payload.name,
                 amount: action.payload.amount,
-                id: state.accounts.length
+                id: state.accounts.length,
+                background: action.payload.background,
             }
             state.accounts.push(currentAccounts);
         },
@@ -27,11 +34,12 @@ export const accountsSlice = createSlice({
             state.accounts = state.accounts.filter((_, i) => i !== action.payload);
         },
 
-        editAccounts: (state, action: PayloadAction<{ name: string, amount: number, id: number }>) => {
+        editAccounts: (state, action: PayloadAction<{ name: string, amount: number, id: number, background: string }>) => {
             const currentAccounts = {
                 name: action.payload.name,
                 amount: action.payload.amount,
                 id: action.payload.id,
+                background: action.payload.background
             }
             state.accounts = state.accounts.map(el => el.id === currentAccounts.id ? currentAccounts : el);
         },

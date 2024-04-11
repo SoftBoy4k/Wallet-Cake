@@ -4,12 +4,15 @@ import { RootState } from '../../redux/store';
 import { addAccounts, editAccounts } from '../../redux/Slices/accountsSlice';
 import { closePopup } from '../../redux/Slices/popupSlice';
 import './CardPopup.css'
-import background_1 from '../../assets/bgc8.png'
+import background_1 from '../../assets/account_bg1.png'
+import background_2 from '../../assets/account_bg2.png'
+import background_3 from '../../assets/account_bg3.png'
 
 export const CardPopup: React.FC = () => {
     const isOpen = useSelector((state: RootState) => state.popup.isOpen);
     const [name, setName] = useState('');
     const [amount, setAmount] = useState<number>(0);
+    const [background, setBackground] = useState<string>(background_1);
     const dispatch = useDispatch();
     const editingCardId = useSelector((state: RootState) => state.popup.editingCardId);
     const accounts = useSelector((state: RootState) => state.accounts.accounts);
@@ -27,6 +30,7 @@ export const CardPopup: React.FC = () => {
                 id: editingCardId || accounts.length-1, // Если нет editingCardId, создаем новую карточку
                 name,
                 amount,
+                background
             };
             if (editingCardId !== null) {
                 dispatch(editAccounts(card));
@@ -38,8 +42,6 @@ export const CardPopup: React.FC = () => {
             setAmount(0);
         }
     };
-
-    console.log('editingCardId', editingCardId);
 
     if (!isOpen) return null; // Если попап не открыт, ничего не рендерим
 
@@ -72,9 +74,14 @@ export const CardPopup: React.FC = () => {
                     <div className='card-popup__background__wrapper'>
                         <p className='card-popup__input__title'>Background</p>
                         <div className='card-popup__background'>
-                            <img src={background_1} alt="background 1" />
-                            <img src={background_1} alt="background 2" />
-                            <img src={background_1} alt="background 3" />
+                            {[background_1, background_2, background_3].map((el, i) => (
+                            <img 
+                                key={i}
+                                className={background === el ? "card-popup__background--active" : undefined}
+                                src={el} 
+                                alt={`background ${i}`} 
+                                onClick={() => setBackground(el)}
+                            />))}
                         </div>
                     </div>
                     <button className='card-popup__btn' type="submit">{editingCardId !== null ? 'Edit Card' : 'Add Card'}</button>

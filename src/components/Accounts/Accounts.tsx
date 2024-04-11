@@ -10,17 +10,9 @@ import { openPopup } from '../../redux/Slices/popupSlice'
 import { RootState } from '../../redux/store'
 import { removeAccounts } from '../../redux/Slices/accountsSlice'
 
-
-export interface IAccount {
-  name: string,
-  amount: number
-}
-
-
 export const Accounts = () => {
 
   const [accountPageNumber, setAccountPageNumber] = useState<number>(1);
-  const cards = useSelector((state: RootState) => state.accounts.accounts);
   const dispatch = useDispatch();
   const accounts = useSelector((state: RootState) => state.accounts.accounts);
 
