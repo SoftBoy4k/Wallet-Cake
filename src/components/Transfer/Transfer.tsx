@@ -1,28 +1,30 @@
 import './Transfer.css'
 import moreIcon from '../../icons/more.png'
-import arrowIcon from '../../icons/arrow.png'
 import spotifyIcon from '../../icons/spotify.png'
 import calendarIcon from '../../icons/calendar.png'
 import { ShortCard } from './ShortCard/ShortCard'
+import { ShortNoCard } from './ShortNoCard/ShortNoCard'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
+import { useState } from 'react'
 
 export const Transfer = () => {
+
+  const accounts = useSelector((state: RootState) => state.accounts.accounts);
+  const [selectedShortCard, setSelectedShortCard] = useState<number>(0);
+
+  const shortCardSelectHandler = (i:number) => {
+    setSelectedShortCard(i)
+  }
+
   return (
     <div className="transfer">
-        <div className='transfer__arrow-next'>
-          <img src={arrowIcon} alt="arrow" />
-        </div>
         <div className='block__header'>
           <h4>Transfer</h4>
           <img className='transfer__icon' src={moreIcon} alt="more" />
         </div>
         <div className='transfer__cards'>
-          <ShortCard/>
-          <ShortCard/>
-        </div>
-        <div className='transfer__pages'>
-          <div className='transfer__page transfer__page-active'/>
-          <div className='transfer__page'/>
-          <div className='transfer__page'/>
+          {[0, 1, 2].map(i => accounts[i] ? <ShortCard account={accounts[i]} key={i} isSelected={selectedShortCard === i} shortCardSelectHandler={shortCardSelectHandler}/> : <ShortNoCard key={i}/>)}
         </div>
         <div className='transfer__form'>
           <div className='transfer__div transfer__div-comment'>

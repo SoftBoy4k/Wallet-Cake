@@ -1,0 +1,16 @@
+.short-no-card {
+    width: 95px;
+    height: 65px;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.short-no-card > img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}

@@ -10,6 +10,7 @@ import { openPopup } from '../../redux/Slices/popupSlice'
 import { RootState } from '../../redux/store'
 import { removeAccounts } from '../../redux/Slices/accountsSlice'
 
+
 export const Accounts = () => {
 
   const [accountPageNumber, setAccountPageNumber] = useState<number>(1);

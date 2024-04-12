@@ -1,0 +1,40 @@
+.short-card {
+    cursor: pointer;
+    width: 95px;
+    height: 65px;
+    background: url('../../../assets/backgroundCard.png') no-repeat center;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all ease 0.5s;
+}
+
+.short-card:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.short-card--active {
+    padding: 1px;
+    box-shadow: 0px 0px 5px #000000;
+    border: 2.5px solid #ffffff;
+}
+
+.short-card--active:hover {
+    box-shadow: 0px 0px 5px #2C55D4;
+}
+
+.short-card__balance {
+    font-size: 16px;
+    margin: 7% 0 0 7%;
+}
+
+.short-card__info {
+    width: 85%;
+    margin: 2% auto;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    font-size: 13px;
+    padding: 0 2px 5px 0;
+}

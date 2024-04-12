@@ -1,11 +1,11 @@
 import './App.css'
 import { AvailableRevenue } from './components/AvailableRevenue/AvailableRevenue'
-import { Transfer } from './components/FastTransfer/Transfer'
+import { Transfer } from './components/Transfer/Transfer'
 import { Header } from './components/Header/Header'
 import { Accounts } from './components/Accounts/Accounts'
 import { Statistics } from './components/Statistics/Statistics'
 import { Transactions } from './components/Transactions/Transactions'
-import { CardPopup } from './components/CreateAccount/CardPopup'
+import { CardPopup } from './components/CreatePopup/CardPopup'
 
 
 function App() {

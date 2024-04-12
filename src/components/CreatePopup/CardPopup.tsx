@@ -27,7 +27,7 @@ export const CardPopup: React.FC = () => {
         e.preventDefault();
         if (name.trim()) {
             const card = {
-                id: editingCardId || accounts.length-1, // Если нет editingCardId, создаем новую карточку
+                id: editingCardId ?? accounts.length-1, // Если нет editingCardId, создаем новую карточку
                 name,
                 amount,
                 background
