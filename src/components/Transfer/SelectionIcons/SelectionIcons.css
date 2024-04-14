@@ -1,0 +1,45 @@
+.selection-icons__wrapper {
+    width: 200px;
+    height: 200px;
+    background-color: #F3F4FC;
+    border: 1px solid #b8bcda;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    border-radius: 10px;
+    top: 35px;
+    right: -20px;
+}
+
+.selection-icons {
+    width: 180px;
+    height: 180px;
+    display: grid;
+    list-style: none;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.selection-icons__icon {
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+    height: 50px;
+    background-color: #fff;
+    transition: all ease 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection-icons__icon:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.selection-icons__icon > img {
+    width: 80%;
+}

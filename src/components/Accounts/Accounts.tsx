@@ -6,7 +6,7 @@ import { Card } from './Card/Card'
 import { NoCard } from './NoCard/NoCard'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { openPopup } from '../../redux/Slices/popupSlice'
+import { openPopup } from '../../redux/Slices/accountsPopupSlice'
 import { RootState } from '../../redux/store'
 import { removeAccounts } from '../../redux/Slices/accountsSlice'
 

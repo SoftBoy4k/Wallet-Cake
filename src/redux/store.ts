@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import accountsReducer from "./Slices/accountsSlice"
-import popupReducer from './Slices/popupSlice'
+import popupReducer from './Slices/accountsPopupSlice'
 
 export const store = configureStore({
     reducer: {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { addAccounts, editAccounts } from '../../redux/Slices/accountsSlice';
-import { closePopup } from '../../redux/Slices/popupSlice';
+import { closePopup } from '../../redux/Slices/accountsPopupSlice';
 import './CardPopup.css'
 import background_1 from '../../assets/account_bg1.png'
 import background_2 from '../../assets/account_bg2.png'

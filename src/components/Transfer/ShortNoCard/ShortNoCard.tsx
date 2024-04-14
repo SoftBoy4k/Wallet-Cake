@@ -1,7 +1,7 @@
 import './ShortNoCard.css'
 import plusIcon from '../../../icons/plus.png'
 import { useDispatch } from 'react-redux';
-import { openPopup } from '../../../redux/Slices/popupSlice';
+import { openPopup } from '../../../redux/Slices/accountsPopupSlice';
 
 export const ShortNoCard = () => {
 

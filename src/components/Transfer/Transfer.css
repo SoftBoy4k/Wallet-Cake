@@ -8,13 +8,19 @@
 .transfer__icon {
     width: 30px;
     cursor: pointer;
+    transition: all ease 0.3s;
+    border-radius: 50%;
+}
+
+.transfer__icon:hover {
+    background-color: #d8dbf2;
 }
 
 .transfer__cards {
     display: flex;
     justify-content: space-between;
     width: 85%;
-    margin: 1% auto;
+    margin: 5% auto;
     margin-bottom: 0;
 }
 
@@ -43,6 +49,7 @@
     height: 40px;
     border-radius: 10px;
     padding-left: 5px;
+    cursor: pointer;
 }
 
 .transfer__div-comment {
@@ -54,29 +61,21 @@
     width: 100%;
 }
 
-.transfer__div-data-categories {
+.transfer__div-date-icon {
     justify-content: space-between;
 }
 
-.transfer__div-data {
-    width: 63%;
+.transfer__div-date {
+    width: 62%;
+    align-self: flex-end;
 }
 
-.transfer__div-data > div {
-    display: flex;
-}
-
-.transfer__div-data > div > img {
-    cursor: pointer;
-    width: 40px;
-    opacity: 0.6;
-}
-
-.transfer__div-categories {
+.transfer__div-icon {
     width: 33%;
+    align-self: flex-end;
 }
 
-.transfer__div-categories > div {
+.transfer__div-icon > div {
     cursor: pointer;
     display: flex;
     background-color: #fff;
@@ -88,11 +87,11 @@
     height: 40px;
 }
 
-.transfer__div-categories > div > p {
+.transfer__div-icon > div > p {
     font-size: 14px;
 }
 
-.transfer__div-categories > div > img {
+.transfer__div-icon > div > img {
     width: 40px;
 }
 
@@ -114,4 +113,13 @@
     font-size: 16px;
     background-color: #2C55D4;
     color: #fff;
+    transition: all ease 0.3s;
+}
+
+.transfer__div-date > input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.transfer__div-amount > button:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
