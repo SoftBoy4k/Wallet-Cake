@@ -5,6 +5,33 @@
     position: relative;
 }
 
+.transfer__operations {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}
+
+.transfer__operations > p {
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.transfer__operations > p:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.transfer__operations > .transfer__operation--active {
+    border-bottom: 1px solid #2C55D4;
+    color: black;
+}
+
+.transfer__operations > .transfer__operation--active:hover {
+    color: black;
+}
+
 .transfer__icon {
     width: 30px;
     cursor: pointer;
