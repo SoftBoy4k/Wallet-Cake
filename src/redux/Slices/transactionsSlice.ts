@@ -8,6 +8,7 @@ export interface ITransaction {
     amount: number,
     icon: string,
     whatAccount: string,
+    transferOperations: 0 | 1
 }
 
 export interface TransactionsState {
@@ -22,7 +23,7 @@ export const transactionsSlice = createSlice({
     name: 'transaction',
     initialState,
     reducers: {
-        addTransaction: (state, action: PayloadAction<{ comment: string, date: Date, amount: number, icon: string, whatAccount: string}>) => {
+        addTransaction: (state, action: PayloadAction<{ comment: string, date: Date, amount: number, icon: string, whatAccount: string, transferOperations: 0 | 1}>) => {
             const currentTransactions = {
                 id: state.transactions.length,
                 comment: action.payload.comment,
@@ -30,6 +31,7 @@ export const transactionsSlice = createSlice({
                 amount: action.payload.amount,
                 icon: action.payload.icon,
                 whatAccount: action.payload.whatAccount,
+                transferOperations: action.payload.transferOperations
             }
             state.transactions.push(currentTransactions);
         },
@@ -46,6 +48,7 @@ export const transactionsSlice = createSlice({
                 amount: action.payload.amount,
                 icon: action.payload.icon,
                 whatAccount: action.payload.whatAccount,
+                transferOperations: action.payload.transferOperations
             }
             state.transactions = state.transactions.map(el => el.id === currentTransactions.id ? currentTransactions : el);
         },
