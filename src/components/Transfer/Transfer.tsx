@@ -29,25 +29,39 @@ export const Transfer = () => {
     setIsSelectedIcon(!isSelectedIcon);
   }
 
+  const formReset = () => {
+    setDate(null);
+    setComment('');
+    setTransferAmount(0);
+    setSelectedIcon(undefined)
+  }
+
   const sendHandler = ():void => {
-    const currentAccounts = {
-      id: selectedShortCard,
-      name: accounts[selectedShortCard].name,
-      background: accounts[selectedShortCard].background,
-      amount: transferOperations === 0 ? accounts[selectedShortCard].amount - transferAmount : accounts[selectedShortCard].amount + transferAmount
-    }
 
-    const currentTransaction = {
-      comment: String(comment),
-      date: date ?? new Date(),
-      amount: transferAmount,
-      icon: selectedIcon ?? defaultIcon,
-      whatAccount: currentAccounts.name,
-      transferOperations: transferOperations
-    }
+    if ( accounts[selectedShortCard] && selectedIcon !== undefined && transferAmount !== 0 && comment) {
+      const currentAccounts = {
+        id: selectedShortCard,
+        name: accounts[selectedShortCard].name,
+        background: accounts[selectedShortCard].background,
+        amount: transferOperations === 0 ? accounts[selectedShortCard].amount - transferAmount : accounts[selectedShortCard].amount + transferAmount
+      }
+  
+      const currentDate = date ?? new Date(); 
+  
+      const currentTransaction = {
+        comment: String(comment),
+        date: `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`,
+        amount: transferAmount,
+        icon: selectedIcon ?? defaultIcon,
+        whatAccount: currentAccounts.name,
+        transferOperations: transferOperations
+      }
+  
+      dispatch(editAccounts(currentAccounts))
+      dispatch(addTransaction(currentTransaction))
 
-    dispatch(editAccounts(currentAccounts))
-    dispatch(addTransaction(currentTransaction))
+      formReset()
+    }
   }
  
   return (

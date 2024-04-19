@@ -4,7 +4,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 export interface ITransaction {
     id: number,
     comment: string,
-    date: Date, 
+    date: string, 
     amount: number,
     icon: string,
     whatAccount: string,
@@ -23,7 +23,7 @@ export const transactionsSlice = createSlice({
     name: 'transaction',
     initialState,
     reducers: {
-        addTransaction: (state, action: PayloadAction<{ comment: string, date: Date, amount: number, icon: string, whatAccount: string, transferOperations: 0 | 1}>) => {
+        addTransaction: (state, action: PayloadAction<{ comment: string, date: string, amount: number, icon: string, whatAccount: string, transferOperations: 0 | 1}>) => {
             const currentTransactions = {
                 id: state.transactions.length,
                 comment: action.payload.comment,

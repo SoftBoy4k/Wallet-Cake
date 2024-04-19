@@ -1,0 +1,72 @@
+.transactions__content__item {
+    padding: 1%;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #E9E9F5;
+    justify-content: space-between;
+    align-items: center;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+
+.transactions__content__item:last-child {
+    border: none;
+}
+
+.transactions__content__item:hover {
+    background-color: #E9E9F5;
+    border-radius: 5px;
+    border: 1px solid #E9E9F5;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.transactions__content__title {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    overflow-y: hidden;
+    margin-right: 5%;
+}
+
+.transactions__content__title > img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.transactions__content__info {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactions__content__info > div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow-y: hidden;
+    width: 20%;
+}
+
+.transactions__content__amount {
+    max-width: 93%;
+    overflow-y: hidden;
+}
+
+.transactions__content__info__arrow {
+    width: 25px;
+}
+
+.transactions__content__complete {
+    justify-content: center;
+}
+
+.transactions__content__info__circle {
+    width: 10px;
+    margin-left: 5px;
+}
+
+.transactions__content__date {
+    justify-content: end;
+    margin-right: 1%;
+}
