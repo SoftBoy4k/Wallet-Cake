@@ -11,16 +11,16 @@
 
 .transactions__header__btns{
    display: flex;
-   width: 270px;
+   width: 300px;
    justify-content: space-between;
    align-items: center;
    cursor: pointer;
+   position: relative;
 }
 
 .transactions__header__btn {
     display: flex;
-    max-width: 150px;
-    width: 100%;
+    width: 145px;
     height: 40px;
     justify-content: center;
     align-items: center;
@@ -35,9 +35,9 @@
     background-color: #d8d8e2;
 }
 
-.transactions__header__btn-2 {
+/* .transactions__header__btn-2 {
     width: 110px;
-}
+} */
 
 .transactions__header__btns > div > img {
     width: 10px;
@@ -53,4 +53,50 @@
     margin-top: 2%;
     overflow-x: hidden;
     padding: 0 1%;
+}
+
+.transactions__header__btn__dropdown {
+    position: absolute;
+    width: 170px;
+    height: 153px;
+    background-color: #E9E9F5;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.transactions__header__btn__dropdown > p {
+    padding: 3px 10px 5px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all ease 0.3s;
+}
+
+.transactions__header__btn__dropdown > p:last-child {
+    border-bottom: none;
+}
+
+.transactions__header__btn__dropdown > p:hover {
+    background-color: #d8d8e2;
+}
+
+.transactions__header__btn__dropdown > p:first-child:hover {
+    background-color: #d8d8e2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.transactions__header__btn__dropdown > p:last-child:hover {
+    background-color: #d8d8e2;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.transactions__header__btn-1__dropdown {
+    top: 50px;
+    right: 110px;
+}
+
+.transactions__header__btn-2__dropdown {
+    display: none;
+    top: 50px;
+    right: -20px;
 }
