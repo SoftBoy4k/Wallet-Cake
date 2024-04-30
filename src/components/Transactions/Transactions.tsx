@@ -16,24 +16,29 @@ export const Transactions = () => {
   const [isActiveFilter, setIsActiveFilter] = useState<isActiveFilterType>(0);
   const [filteredTransactions, setFilteredTransactions] = useState<ITransaction[]>(transactions);
 
-  const btnsClickHandler = (e, id:isActiveFilterType): void => {
-    if (e.target.classList[0] === "transactions__header__btn" || e.target.parentElement.classList[0] === "transactions__header__btn") {
-      setIsActiveFilter(prev => prev === id ? 0 : id);
-    } else {
-      setIsActiveFilter(0);
-    }
-  }
+  const handleBtnsClick = (e: React.MouseEvent<HTMLElement>, id: isActiveFilterType): void => {
+    const target = e.target as HTMLElement;
+    const parent = target.parentElement;
+    const isBtnClicked = target.classList.contains("transactions__header__btn") ||
+                        (parent && parent.classList.contains("transactions__header__btn"));
+    setIsActiveFilter(prev => (isBtnClicked && prev === id) ? 0 : id);
+};
 
-  const filterListClickHandler = (e): void => {
-    if (e.target.parentElement.classList[1] === 'transactions__header__btn-1__dropdown') {
-      setDisplayFilter(e.target.innerText);
-      filter(e.target.innerText, dateFilter);
-    } else if (e.target.parentElement.classList[1] === 'transactions__header__btn-2__dropdown') {
-      setDateFilter(e.target.innerText);
-      filter(displayFilter, e.target.innerText);
+const handleFilterListClick = (e: React.MouseEvent<HTMLElement>): void => {
+    const target = e.target as HTMLElement;
+    const parentClassList = (target.parentElement && target.parentElement.classList);
+
+    if (parentClassList) {
+        if (parentClassList.contains('transactions__header__btn-1__dropdown')) {
+            setDisplayFilter(target.innerText);
+            filter(target.innerText, dateFilter);
+        } else if (parentClassList.contains('transactions__header__btn-2__dropdown')) {
+            setDateFilter(target.innerText);
+            filter(displayFilter, target.innerText);
+        }
     }
     setIsActiveFilter(0);
-  }
+};
   
   const sortByDateFromOld = (fromOld:boolean, currentFilteredTransactions:ITransaction[]) => {
     return currentFilteredTransactions.slice().sort((a: ITransaction, b: ITransaction): number => {
@@ -134,18 +139,18 @@ export const Transactions = () => {
         <div className='block__header'>
           <h4>Transactions</h4>
           <div className='transactions__header__btns'>
-            <div className='transactions__header__btn transactions__header__btn-1' onClick={(e) => btnsClickHandler(e, 1)}>
+            <div className='transactions__header__btn transactions__header__btn-1' onClick={(e:React.MouseEvent<HTMLElement>) => handleBtnsClick(e, 1)}>
               <p>{displayFilter}</p>
               <img src={dropDownArrow} alt="dropDownArrow" />
             </div>
-            <div className='transactions__header__btn transactions__header__btn-2' onClick={(e) => btnsClickHandler(e, 2)}>
+            <div className='transactions__header__btn transactions__header__btn-2' onClick={(e:React.MouseEvent<HTMLElement>) => handleBtnsClick(e, 2)}>
               <p>{dateFilter}</p>
               <img src={dropDownArrow} alt="dropDownArrow" />
             </div>
             <div 
               className='transactions__header__btn__dropdown transactions__header__btn-1__dropdown' 
               style={isActiveFilter == 1 ? {display: "block"} : {display: "none"}}
-              onClick={(e) => filterListClickHandler(e)}
+              onClick={(e:React.MouseEvent<HTMLElement>) => handleFilterListClick(e)}
               >
               <p>All transactions</p>
               <p>Only expenses</p>
@@ -156,7 +161,7 @@ export const Transactions = () => {
             <div 
               className='transactions__header__btn__dropdown transactions__header__btn-2__dropdown' 
               style={isActiveFilter == 2 ? {display: "block"} : {display: "none"}}
-              onClick={(e) => filterListClickHandler(e)}
+              onClick={(e:React.MouseEvent<HTMLElement>) => handleFilterListClick(e)}
             >
               <p>Last day</p>
               <p>Last week</p>
