@@ -18,7 +18,7 @@ export const Transfer = () => {
   const [selectedIcon, setSelectedIcon] = useState<string | undefined>();
   const [transferOperations, setTransferOperations] = useState<0 | 1>(0); // 0 - Expenses, 1 - Income
   const [transferAmount, setTransferAmount] = useState<number>(0);
-  const [comment, setComment] = useState<string>();
+  const [comment, setComment] = useState<string>('');
   const [date, setDate] = useState<Date | null>();
 
   const shortCardSelectHandler = (i:number) => {
@@ -63,6 +63,10 @@ export const Transfer = () => {
       formReset()
     }
   }
+
+  const amountChangeHandler = (num: number): void => {
+    setTransferAmount(num < 0 ? 0 : num);
+  } 
  
   return (
     <div className="transfer">
@@ -109,7 +113,7 @@ export const Transfer = () => {
                   className='transfer__input' 
                   type="number"
                   value={transferAmount} 
-                  onChange={e => setTransferAmount(Number(e.target.value))}/>
+                  onChange={e => amountChangeHandler(Number(e.target.value))}/>
               </div>
             </div>
             <button onClick={sendHandler}>Send</button>

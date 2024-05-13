@@ -2,6 +2,7 @@
     background-color: #F3F4FC;
     grid-column: 1 / 4;
     border-radius: 25px;
+    position: relative;
 }
 
 .statistics__header-options {
@@ -13,6 +14,9 @@
 
 .statistics__header-options > p {
     cursor: pointer;
+    width: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .statistics__header-options > img {
@@ -24,6 +28,57 @@
 .statistics__drop-down__icon {
     width: 10px;
     height: 10px;
+    margin-left: 5px;
+}
+
+.statistics__operations-selection {
+    cursor: pointer;
+    position: absolute;
+    background-color: #CED2F3;
+    top: 35px;
+    width: 70px;
+}
+
+.statistics__operations-selection:hover {
+    background-color: #b8bcda;
+}
+
+.statistics__year-selection {
+    top: 45px;
+    right: 27px;
+    position: absolute;
+    background-color: #F3F4FC;
+    border: 1px solid #b8bcda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px 0;
+    width: 60px;
+    height: 100px;
+}
+
+.statistics__year-selection > ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+.statistics__year {
+    padding-left: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.statistics__year:hover {
+    background-color: #CED2F3;
+    cursor: pointer;
+}
+
+.statistics__year--active {
+    padding-left: 2px;
+    background-color: #2C55D4;
+    color: #fff;
 }
 
 .statistics__content {
