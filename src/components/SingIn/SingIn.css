@@ -1,0 +1,45 @@
+.sing-in__form {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sing-in__form > h2 {
+    margin: 5% 0;
+}
+
+.sing-in__form__block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+}
+
+.sing-in__form__block > label {
+    width: 100%;
+}
+
+.sing-in__form__block > input {
+    width: 100%;
+    height: 35px;
+}
+
+.sing-in__btn {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    margin-top: 5%;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #2C55D4;
+    color: #fff;
+    transition: all ease 0.3s;
+}
+
+.sing-in__btn:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+

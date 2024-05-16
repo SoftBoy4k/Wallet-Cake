@@ -1,26 +1,31 @@
 import './App.css'
-import { AvailableRevenue } from './components/AvailableRevenue/AvailableRevenue'
-import { Transfer } from './components/Transfer/Transfer'
+import HomePage from './Pages/HomePage/HomePage'
 import { Header } from './components/Header/Header'
-import { Accounts } from './components/Accounts/Accounts'
-import { Statistics } from './components/Statistics/Statistics'
-import { Transactions } from './components/Transactions/Transactions'
-import { CardPopup } from './components/CreatePopup/CardPopup'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import SingInPage from './Pages/SingInPage/SingInPage.tsx'
+import ErrorPage from './Pages/ErrorPage/ErrorPage.tsx'
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: 'sing-in',
+    element: <SingInPage/>
+  }
+]);
 
 
 function App() {
 
   return (
-    <div className='main'>
+    <div className='app'>
       <Header/>
-      <div className='content'>
-        <Statistics/>
-        <AvailableRevenue/>
-        <Accounts/>
-        <Transactions/>
-        <Transfer/>
-      </div>
-      <CardPopup/>
+      <RouterProvider router={router}/>
     </div>
   )
 }
