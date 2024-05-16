@@ -14,11 +14,11 @@
    width: 300px;
    justify-content: space-between;
    align-items: center;
-   cursor: pointer;
    position: relative;
 }
 
 .transactions__header__btn {
+    cursor: pointer;
     display: flex;
     width: 145px;
     height: 40px;
@@ -34,10 +34,6 @@
 .transactions__header__btn:hover {
     background-color: #d8d8e2;
 }
-
-/* .transactions__header__btn-2 {
-    width: 110px;
-} */
 
 .transactions__header__btns > div > img {
     width: 10px;

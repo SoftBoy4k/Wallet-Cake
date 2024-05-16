@@ -6,23 +6,38 @@
 }
 
 .statistics__header-options {
-    width: 120px;
+    width: 160px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.statistics__header-options > p {
+.statistics__operations {
     cursor: pointer;
-    width: 70px;
+    width: 120px;
+    height: 35px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9ff;
+    border: 1px solid #dfe0eb;
+    padding: 0 7px;
+    border-radius: 7px;
 }
 
-.statistics__header-options > img {
+.statistics__operations-active {
+    border: 1px solid #2C55D4;
+}
+
+.statistics__calendar  {
     cursor: pointer;
     width: 30px;
     height: 30px;
+}
+
+.statistics__calendar-active {
+    background-color: #dcdeef;
+    box-shadow: 0px 0px 4px #bec0d3;
 }
 
 .statistics__drop-down__icon {
@@ -34,18 +49,36 @@
 .statistics__operations-selection {
     cursor: pointer;
     position: absolute;
-    background-color: #CED2F3;
-    top: 35px;
-    width: 70px;
+    top: 45px;
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9ff;
+    border: 1px solid #dfe0eb;
+    border-radius: 7px;
+}
+
+.statistics__operations-selection > p {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 7px;
 }
 
 .statistics__operations-selection:hover {
-    background-color: #b8bcda;
+    background-color: #CED2F3;
+    border: 1px solid #ffffff;
+    box-shadow: 2px 2px 4px hsl(227, 20%, 81%);
+    color: #2C55D4;
+    cursor: pointer;
 }
 
 .statistics__year-selection {
     top: 45px;
-    right: 27px;
+    right: 0px;
     position: absolute;
     background-color: #F3F4FC;
     border: 1px solid #b8bcda;
@@ -54,29 +87,43 @@
     justify-content: center;
     border-radius: 10px;
     padding: 5px 0;
-    width: 60px;
-    height: 100px;
+    width: 120px;
+    height: 135px;
 }
 
 .statistics__year-selection > ul {
     width: 100%;
     height: 100%;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .statistics__year {
-    padding-left: 2px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 30px;
+    border-radius: 7px;
+    padding-left: 7px;
     display: flex;
     align-items: center;
 }
 
 .statistics__year:hover {
     background-color: #CED2F3;
+    color: #2C55D4;
     cursor: pointer;
 }
 
 .statistics__year--active {
-    padding-left: 2px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 30px;
+    border-radius: 7px;
+    padding-left: 7px;
     background-color: #2C55D4;
     color: #fff;
 }

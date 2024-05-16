@@ -35,7 +35,10 @@ export const Statistics = () => {
         <div className='block__header'>
           <h4>Statistics</h4>
           <div className='statistics__header-options'>
-            <p onClick={() => {setIsOperationsSelectionActived(!isOperationsSelectionActived)}}>
+            <p 
+              className={isOperationsSelectionActived ? 'statistics__operations statistics__operations-active' : 'statistics__operations'}
+              onClick={() => {setIsOperationsSelectionActived(!isOperationsSelectionActived)}}
+            >
               {currentOperation} 
               <img 
                 className='statistics__drop-down__icon' 
@@ -67,6 +70,7 @@ export const Statistics = () => {
               })}
             </div>
             <img 
+              className={isYearSelectionActived ? "statistics__calendar statistics__calendar-active" : 'statistics__calendar' }
               src={calendarIcon} 
               alt="year selection" 
               onClick={() => setIsYearSelectionActived(!isYearSelectionActived)}
