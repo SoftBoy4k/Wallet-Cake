@@ -1,24 +1,29 @@
+import { useState } from 'react';
 import './SingIn.css'
 
 const SingIn = () => {
 
-    const isSingIn = true;
+    const [isSingIn, setIsSingIn] = useState(false);
 
     return (
         <div className='sing-in__form'>
-            <h2>{isSingIn ? 'Sing In' : 'Log In'}</h2>
+            <h2>{isSingIn ? 'Sing in' : 'Create Account'}</h2>
 
-            <div className='sing-in__form__block'>
-                <label htmlFor="login">Login</label>
-                <input type="text" id="login"/>
-            </div>
+            <input className='sing-in__form__input' type="text" id="login" placeholder='Login'/>
 
-            <div className='sing-in__form__block'>
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password"/>
-            </div>
+            <input className='sing-in__form__input' type="password" id="password" placeholder='Password'/>
 
-            <button className='sing-in__btn'>{isSingIn ? 'Sing In' : 'Log In'}</button>
+            <button className='sing-in__btn'>{isSingIn ? 'Sing In' : 'Get Started'}</button>
+
+            <p style={{color: "#grey", fontSize: "14px"}}>
+                {isSingIn ? "Don't have an account yet? " : 'Already a member? '} 
+                <span 
+                    style={{color: "#2C55D4", cursor: "pointer", fontWeight: "600"}}
+                    onClick={() => setIsSingIn(!isSingIn)}
+                >
+                    {isSingIn ? "Sing up" : 'Sing in'}
+                </span>
+            </p>
         </div>
     )
 }
