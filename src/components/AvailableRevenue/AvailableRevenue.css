@@ -57,15 +57,13 @@
 }
 
 .available-revenue__chart-info__bar-inner1 {
-    background-color: #DF1B00;
-    width: 25px;
+    background-color: #F8C3BF;
     height: 5px;
     border-radius: 15px;
 }
 
 .available-revenue__chart-info__bar-inner2 {
-    background-color: #F8C3BF;
-    width: 75px;
+    background-color: #DF1B00;
     height: 5px;
     border-radius: 15px;
 }
