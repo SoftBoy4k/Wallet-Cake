@@ -11,7 +11,7 @@
 
 .transactions__header__btns{
    display: flex;
-   width: 300px;
+   width: 360px;
    justify-content: space-between;
    align-items: center;
    position: relative;
@@ -20,9 +20,10 @@
 .transactions__header__btn {
     cursor: pointer;
     display: flex;
-    width: 145px;
+    width: 170px;
     height: 40px;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 10px;
     align-items: center;
     background-color: #E9E9F5;
     border-radius: 10px;
@@ -52,47 +53,43 @@
 }
 
 .transactions__header__btn__dropdown {
+    top: 45px;
+    right: 0px;
     position: absolute;
-    width: 170px;
-    height: 153px;
-    background-color: #E9E9F5;
+    background-color: #F3F4FC;
+    border: 1px solid #b8bcda;
     border-radius: 10px;
-    color: rgba(0, 0, 0, 0.7);
+    width: 170px;
+    height: 160px;
+    padding: 5px 0;
 }
 
 .transactions__header__btn__dropdown > p {
-    padding: 3px 10px 5px 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    transition: all ease 0.3s;
-}
-
-.transactions__header__btn__dropdown > p:last-child {
-    border-bottom: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 30px;
+    border-radius: 7px;
+    padding-left: 7px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .transactions__header__btn__dropdown > p:hover {
-    background-color: #d8d8e2;
-}
-
-.transactions__header__btn__dropdown > p:first-child:hover {
-    background-color: #d8d8e2;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.transactions__header__btn__dropdown > p:last-child:hover {
-    background-color: #d8d8e2;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: #CED2F3;
+    color: #2C55D4;
 }
 
 .transactions__header__btn-1__dropdown {
     top: 50px;
-    right: 110px;
+    right: 190px;
 }
 
 .transactions__header__btn-2__dropdown {
     display: none;
     top: 50px;
-    right: -20px;
+    right: 0px;
 }
