@@ -27,6 +27,9 @@
 .short-card__balance {
     font-size: 16px;
     margin: 7% 0 0 7%;
+    overflow: hidden;
+    padding: 0 2px;
+    white-space: nowrap;
 }
 
 .short-card__info {
@@ -37,4 +40,5 @@
     justify-content: end;
     font-size: 13px;
     padding: 0 2px 5px 0;
+    overflow: hidden;
 }

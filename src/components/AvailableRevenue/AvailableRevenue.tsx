@@ -51,6 +51,10 @@ export const AvailableRevenue = () => {
       const newUnavailable = total > 0 ? (expenses / total) * 100 : 0;
       const newAvailable = 100 - newUnavailable;
 
+      if (income === 0 && expenses === 0) {
+        income = 100;
+      }
+
       setChartData({
         ...initialData,
         datasets: [

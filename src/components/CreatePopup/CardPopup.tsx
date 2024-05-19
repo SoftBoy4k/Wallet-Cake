@@ -7,8 +7,10 @@ import './CardPopup.css'
 import background_1 from '../../assets/account_bg1.png'
 import background_2 from '../../assets/account_bg2.png'
 import background_3 from '../../assets/account_bg3.png'
+import { MAX_AVAILABLE_ACCOUNT_NAME_LENGTH, MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT } from '../../constants';
 
 export const CardPopup: React.FC = () => {
+
     const isOpen = useSelector((state: RootState) => state.popup.isOpen);
     const [name, setName] = useState('');
     const [amount, setAmount] = useState<number>(0);
@@ -43,6 +45,22 @@ export const CardPopup: React.FC = () => {
         }
     };
 
+    const handlerClickSetAmount = (num: number): void => {
+        if(num > MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT){
+            setAmount(MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT)
+        } else {
+            setAmount(num);
+        }
+    }
+
+    const handlerClickSetName = (name: string): void => {
+        if(name.length >= MAX_AVAILABLE_ACCOUNT_NAME_LENGTH){
+            setName(name.slice(0, MAX_AVAILABLE_ACCOUNT_NAME_LENGTH - 1));
+        } else {
+            setName(name);
+        }
+    }
+
     if (!isOpen) return null; // Если попап не открыт, ничего не рендерим
 
     return (
@@ -57,7 +75,7 @@ export const CardPopup: React.FC = () => {
                         type="number"
                         placeholder="Amount"
                         value={amount}
-                        onChange={e => setAmount(Number(e.target.value))}
+                        onChange={e => handlerClickSetAmount(Number(e.target.value))}
                         />
                         <p className='card-popup__form__amount__currency'>USD</p>
                     </div>
@@ -68,7 +86,7 @@ export const CardPopup: React.FC = () => {
                         type="text"
                         placeholder="Name"
                         value={name}
-                        onChange={e => setName(e.target.value)}
+                        onChange={e => handlerClickSetName(e.target.value)}
                         />
                     </div>
                     <div className='card-popup__background__wrapper'>

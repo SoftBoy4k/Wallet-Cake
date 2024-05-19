@@ -8,6 +8,7 @@ import { SelectionIcons } from './SelectionIcons/SelectionIcons'
 import { editAccounts } from '../../redux/Slices/accountsSlice'
 import { addTransaction } from '../../redux/Slices/transactionsSlice'
 import defaultIcon from '../../icons/question.png'
+import { MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT, MAX_AVAILABLE_COMMENT_LENGTH } from '../../constants'
 
 export const Transfer = () => {
 
@@ -65,7 +66,21 @@ export const Transfer = () => {
   }
 
   const amountChangeHandler = (num: number): void => {
-    setTransferAmount(num < 0 ? 0 : num);
+    if(num > MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT){
+      setTransferAmount(MAX_AVAILABLE_AMOUNT_ON_THE_ACCOUNT)
+    } else if (num < 0) {
+      setTransferAmount(0)
+    } else {
+        setTransferAmount(num);
+    }
+  } 
+
+  const commentChangeHandler = (comment: string): void => {
+    if(comment.length >= MAX_AVAILABLE_COMMENT_LENGTH){
+      setComment(comment.slice(0, MAX_AVAILABLE_COMMENT_LENGTH - 1))
+    } else {
+      setComment(comment);
+    }
   } 
  
   return (
@@ -91,7 +106,7 @@ export const Transfer = () => {
         <div className='transfer__form'>
           <div className='transfer__div transfer__div-comment'>
             <p className='transfer__text'>Comment</p>
-            <input className='transfer__input' type="text" value={comment} onChange={(e) => setComment(e.target.value)}/>
+            <input className='transfer__input' type="text" value={comment} onChange={(e) => commentChangeHandler(e.target.value)}/>
           </div>
           <div className='transfer__div transfer__div-date-icon'>
             <div className='transfer__div-date'>
